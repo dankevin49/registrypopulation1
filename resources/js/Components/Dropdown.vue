@@ -6,7 +6,7 @@ const props = defineProps({
         default: 'right',
     },
     width: {
-        default: '48',
+        default: '100',
     },
     contentClasses: {
         default: () => ['py-1', 'bg-white'],

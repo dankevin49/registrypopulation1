@@ -6,7 +6,7 @@ import { Link } from '@inertiajs/inertia-vue3';
 <main>
     <div class="flex flex-col sm:justify-top items-center pt-6 sm:pt-120">
         <div id="logo" class="w-80">
-        <img src="images/bor.png">
+          <a href="/"><img src="images/bitmap2.png"></a>
     </div>
 
         <div
@@ -20,11 +20,20 @@ import { Link } from '@inertiajs/inertia-vue3';
 
 <style lang="css">
 main{
-    background-image: linear-gradient(#37b524d4 0.14%, #e91155da 46.77%, #37b524d4 92.2%);
+    background-image: linear-gradient(#38b52480 0.14%, rgba(255, 46, 113, 0.405) 46.77%, rgba(56, 181, 36, 0.5) 92.2%),url(images/Borongan-cityhall.png);
     background-position: center;
     background-size: cover;
     position: relative;
     width: 100%;
     min-height: 100vh;
-    }
+    }   
 </style>
+<script>
+export default {
+  data() {
+    return {
+      uniqueKey: Date.now()
+    };
+  }
+};
+</script>
