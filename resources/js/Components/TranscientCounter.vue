@@ -1,6 +1,6 @@
 <template>
-    <div class="hgj">
-      Total: {{ count }}
+     <div class="container2">
+      {{ count }}
     </div>
   </template>
   
@@ -26,11 +26,14 @@
   };
   </script>
 <style>
-.hgj{
-    color: #38b52480;
-    font-size: 25px;
-    left: 35%;
-    position: relative;
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 50px; /* set the height of the container */
+  color: #38b52480;
+  font-size: 25px;
+  font-family: 'Poppins';
+  font-weight: 700;
 }
-
 </style>

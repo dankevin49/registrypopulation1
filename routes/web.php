@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Response;
 use Inertia\Inertia;
 use App\Models\User;
 
@@ -36,6 +38,11 @@ Route::get('/api/users/count', function () {
     ]);
 });
 
+Route::get('/api/registry/count', function () {
+    $count = DB::table('registry')->count();
+    return response()->json(['count' => $count]);
+});
+
 Route::get('/registries/search', 'RegistryController@search')->name('registries.search');
 
 
@@ -44,5 +51,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/households/count', function () {
+    $count = DB::table('registry')->distinct('household_num')->count('household_num');
+    return $count;
+});
+
 
 require __DIR__.'/auth.php';

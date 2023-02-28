@@ -22,11 +22,11 @@ export default {
   data() {
     return {
       chartData: {
-        labels: [ 'Single', 'Married', 'Living-in', 'Widowed', 'Separated', 'Divorced', 'Unknown' ],
+        labels: [ 'Waray', 'Bisaya', 'Ilongo', 'Tagalog', 'Others' ],
         datasets: [{
         label: 'Population Size',
         backgroundColor: ['#ff2e7167'],
-        data: [5400, 7700, 3600, 2900, 1600, 300, 100 ] } ],
+        data: [15400, 2700, 600, 1900, 1300] } ],
       },
       chartOptions: {
         responsive: true,

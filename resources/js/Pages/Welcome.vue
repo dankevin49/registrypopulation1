@@ -7,10 +7,12 @@ import Counter from '@/Components/Counter.vue';
 import DonutChart from '@/Components/DonutChart.vue';
 import LineChart from '@/Components/LineChart.vue';
 import { Head, Link } from '@inertiajs/inertia-vue3';
-import MigrantsCounter from '@/Components/MigrantsCounter.vue';
-import InhabitantCounter from '@/Components/InhabitantCounter.vue';
 import TranscientCounter from '@/Components/TranscientCounter.vue';
-import Footer from '@/Components/Footer.vue'
+import Footer from '@/Components/Footer.vue';
+import HouseholdCounter from '@/Components/HouseholdCounter.vue';
+import FamilyCounter from '@/Components/FamilyCounter.vue';
+import BarChart2 from '@/Components/BarChart2.vue';
+import LineChart2 from '@/Components/LineChart2.vue';
 defineProps({
     canLogin: Boolean,
     canRegister: Boolean,
@@ -73,7 +75,7 @@ defineProps({
     <div class="bar">
         <div class="bkg">
             <div class="txt">
-        <h1>Largest Population by Barangay</h1>
+        <h1>Population by Marital Status</h1>
             <BarChart></BarChart>
         </div>
     </div>
@@ -90,8 +92,8 @@ defineProps({
         <div class="bkg">
         <div class="txt">
             <h1>Total Population</h1>
-            <Counter/>
         </div>
+            <Counter/>
         </div>
     </div>
     <div class="donut">
@@ -110,30 +112,52 @@ defineProps({
         </div>
         </div>
     </div>
-    <div class="migcounter">
+    <div class="famcounter">
         <div class="bkg">
         <div class="txt">
-            <h1>Total Migrant Count</h1>
-            <MigrantsCounter/>
+            <h1>Total Family Count</h1>
+            <FamilyCounter/>
         </div>
         </div>
     </div>
-    <div class="inhacounter">
+    <div class="householdcounter">
         <div class="bkg">
         <div class="txt">
-            <h1>Total Inhabitant Count</h1>
-            <InhabitantCounter/>
+            <h1>Total Household Count</h1>
+            <HouseholdCounter/>
         </div>
         </div>
     </div>
-    <div class="transcientcounter">
+    <div class="bar2">
+        <div class="bkg">
+            <div class="txt">
+        <h1>Population by Ethnicity</h1>
+            <BarChart2></BarChart2>
+        </div>
+    </div>
+    </div>
+    <div class="line2">
+        <div class="bkg">
+        <div class="txt">
+            <h1>Population by Highest Educational Attainment</h1>
+            <LineChart2/>
+        </div>
+        </div>
+    </div>
+    <div class="trans">
+        <img src="images/TRANSPARENCY-SEAL-1024x329.jpg">
+    </div>
+    <div class="download">
+        <img src="images/DOWNLOAD-FORMS-1-1024x328.jpg">
+    </div>
+   <!--- <div class="transcientcounter">
         <div class="bkg">
         <div class="txt">
             <h1>Total Transcient Count</h1>
             <TranscientCounter/>
         </div>
-        </div>
-    </div> 
+        </div> 
+    </div> -->
 </section>
 
 </body>
@@ -244,13 +268,13 @@ color: black;
     position: absolute;
     border: 10%;
     box-shadow: 80%;
-    right: 7%;
-    top: 150%;
+    left: 7%;
+    top: 189%;
     width: 30%;
     height: 150%;
 }
 .txt{
-    justify-content: center;
+    text-align: center;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -262,7 +286,7 @@ color: black;
     border: 10%;
     box-shadow: 80%;
     left: 40%;
-    top: 145%;
+    top: 185%;
     width: 20%;
     height: 5%;
 }
@@ -270,7 +294,7 @@ color: black;
     position: absolute;
     border: 10%;
     box-shadow: 80%;
-    left: 10%;
+    left: 7%;
     top: 147%;
     width: 25%;
     height: 5%;
@@ -280,34 +304,52 @@ color: black;
     border: 10%;
     box-shadow: 80%;
     left: 40%;
-    top: 205%;
+    top: 245%;
     width: 20%;
     height: 5%;
+}
+.bar2{
+    position: absolute;
+    border: 10%;
+    box-shadow: 80%;
+    left: 7%;
+    top: 248.5%;
+    width: 30%;
+    height: 150%;
+}
+.line2{
+    position: absolute;
+    border: 10%;
+    box-shadow: 80%;
+    right: 7%;
+    top: 248.5%;
+    width: 30%;
+    height: 150%;
 }
 .line{
     position: absolute;
     border: 10%;
     box-shadow: 80%;
     right: 7%;
-    top: 210%;
+    top: 189%;
     width: 30%;
     height: 150%;
 }
-.migcounter{
+.famcounter{
     position: absolute;
     border: 10%;
     box-shadow: 80%;
-    left: 10%;
-    top: 207%;
+    right: 7%;
+    top: 147%;
     width: 25%;
     height: 5%;
 }
-.inhacounter{
+.householdcounter{
     position: absolute;
     border: 10%;
     box-shadow: 80%;
-    left: 10%;
-    top: 170%;
+    left: 37.5%;
+    top: 147%;
     width: 25%;
     height: 5%;
 }
@@ -327,6 +369,30 @@ color: black;
     position: absolute;
     bottom: 0%;
 }
+.trans{
+    position: absolute;
+    left: 2%;
+    top: 300%;
+    width: 100%;  
+    width: 400px;
+    height: 129px;
+    transition: 0.1s;    
+}
+.trans:hover{
+    box-shadow: 0 0 90px 0px rgba(0,0,0,0.2);
+}
+.download{
+    position: absolute;
+    left: 35%;
+    top: 300%;
+    width: 100%;  
+    width: 400px;
+    height: 129px;
+    transition: 0.1s;    
+}
+.download:hover{
+    box-shadow: 0 0 90px 0px rgba(0,0,0,0.2);
+}
 </style>
 <script>
 export default {
@@ -335,7 +401,9 @@ export default {
             uniqueKey: Date.now()
         };
     },
-    components: { LineChart }
+    components: { LineChart, HouseholdCounter },
+    components: {
+    HouseholdCounter
+  }
 };
 </script>
-
